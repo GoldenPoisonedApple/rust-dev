@@ -1,0 +1,25 @@
+name: rust-dev-template
+
+services:
+  dev:
+    # タグは rust-toolchain.toml の channel と揃える
+    image: rust-dev:1.99-bookworm
+    pull_policy: never
+    # ユーザー切り替えは devcontainer.json の remoteUser と updateRemoteUserUID に任せる
+    # PID 1 を tini にして子プロセスを回収する
+    init: true
+    working_dir: /workspace
+    command: sleep infinity
+    volumes:
+      - ..:/workspace
+      # 共通キャッシュ
+      - cargo-registry:/home/devuser/.cargo/registry
+      - cargo-git:/home/devuser/.cargo/git
+
+volumes:
+  cargo-registry:
+    external: true
+    name: cargo-registry
+  cargo-git:
+    external: true
+    name: cargo-git

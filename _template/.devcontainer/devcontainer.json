@@ -1,0 +1,20 @@
+{
+  "name": "template",
+  "dockerComposeFile": "compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "devuser",
+  "updateRemoteUserUID": true,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+				"mhutchie.git-graph",
+				"esbenp.prettier-vscode",
+				"github.vscode-github-actions"
+      ]
+    }
+  },
+  "postCreateCommand": "rustc --version && cargo fetch"
+}

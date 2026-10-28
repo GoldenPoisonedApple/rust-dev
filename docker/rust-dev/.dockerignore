@@ -1,0 +1,10 @@
+# docker build時に無視するファイル
+.git
+.gitignore
+
+.devcontainer
+
+target
+
+.env
+.env.*

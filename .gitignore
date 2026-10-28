@@ -1,0 +1,9 @@
+/*
+
+# 必要なファイルのみ
+!/docker
+!/_template
+
+!.gitignore
+!README.md
+!memo.md
