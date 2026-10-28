@@ -1,4 +1,5 @@
 # .devcontainer
+/.devcontainer
 
 # ビルド成果物
 /target
