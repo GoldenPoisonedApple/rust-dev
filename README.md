@@ -4,9 +4,15 @@
 **ベースイメージ(`rust-dev`)とクレートのキャッシュ(`.cargo/registry`, `.cargo/git`)を共有しているからストレージに優しい！**
 
 ## 開発用イメージ！
-開発用イメージ: `rust-dev`: 元イメージ(rust:bookworm)
-- [Dockerfile](./docker/rust-dev/Dockerfile): ユーザをホストと同じユーザに揃える、開発に必要なツールのインストール
-- [Makefile](./docker/rust-dev/Makefile): 必ず最初にここで開発用イメージをビルド、各プロジェクトはこのイメージを参照、元イメージのバージョンもここで指定
+開発用イメージ: `rust-dev`: 元イメージ(rust:bookworm)、各プロジェクトのコンテナはこのイメージを参照
+- [./docker/rust-dev/Dockerfile](./docker/rust-dev/Dockerfile): ユーザをホストと同じユーザに揃える、開発に必要なツールのインストール
+- [./docker/rust-dev/Makefile](./docker/rust-dev/Makefile): 元イメージのバージョンもここで指定
+- 初回実行
+```bash
+# ./docker/rust-dev/
+make init
+make build
+```
 
 ## つかいかた！
 1. `_template/` をコピーしてプロジェクトを作成
