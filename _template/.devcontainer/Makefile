@@ -1,5 +1,5 @@
 .PHONY: build
-dev:
+build:
 	docker compose up -d
 
 .PHONY: down
